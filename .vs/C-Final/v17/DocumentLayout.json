@@ -1,12 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\Final\\C-Final\\",
-  "Documents": [],
+  "WorkspaceRootPath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\Views\\Home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:C#DiscApp\\Views\\Home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "course.cshtml",
+              "DocumentMoniker": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\Views\\Home\\course.cshtml",
+              "RelativeDocumentMoniker": "C#DiscApp\\Views\\Home\\course.cshtml",
+              "ToolTip": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\Views\\Home\\course.cshtml",
+              "RelativeToolTip": "C#DiscApp\\Views\\Home\\course.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-19T23:47:37.285Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
