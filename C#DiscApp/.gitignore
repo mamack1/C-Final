@@ -519,3 +519,5 @@ $RECYCLE.BIN/
 .LSOverride
 
 .vs/C#DiscApp/FileContentIndex/*
+
+.vs/slnx.sqlite
