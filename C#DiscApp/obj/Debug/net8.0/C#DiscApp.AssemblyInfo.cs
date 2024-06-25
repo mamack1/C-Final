@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("C#DiscApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a285f07637335d8c9abdbc8a47e06210ccb4c938")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7e0310d1886012eccde641cf69dd8d3be05165e")]
 [assembly: System.Reflection.AssemblyProductAttribute("C#DiscApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("C#DiscApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

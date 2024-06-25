@@ -396,3 +396,124 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+.vs/
+TestResults/
+[Tt]est[Rr]esults/
+*.nupkg
+*.snupkg
+*.nuspec
+*.psess
+*.vspx
+*.vsp
+*.vspf
+*.vspscc
+*.aspx.cs
+*.aspx.designer.cs
+
+# Enable "dotnet pack" to work for API Only projects without generating any output
+!src/**/*.csproj
+
+# Endpoints logs
+*.dotnetcore-project.*
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+NuGet.Config
+NuGet.exe
+NuGetScratch/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NPM
+node_modules/
+
+# Visual Studio Code
+.vscode/
+.vscode/**
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Directories for any working directories that are set
+*.ide/
+!.vs/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+.idea_modules/
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Docker
+*.dockerignore
+**/[Dd]ockerfile*
+
+# Linux
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
