@@ -521,3 +521,5 @@ $RECYCLE.BIN/
 .vs/C#DiscApp/FileContentIndex/*
 
 .vs/slnx.sqlite
+
+.vs/C#DiscApp/v17/*.suo
