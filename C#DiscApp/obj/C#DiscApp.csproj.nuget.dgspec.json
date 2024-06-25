@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mike\\source\\repos\\C#DiscApp\\C#DiscApp.csproj": {}
+    "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mike\\source\\repos\\C#DiscApp\\C#DiscApp.csproj": {
+    "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mike\\source\\repos\\C#DiscApp\\C#DiscApp.csproj",
+        "projectUniqueName": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
         "projectName": "C#DiscApp",
-        "projectPath": "C:\\Users\\mike\\source\\repos\\C#DiscApp\\C#DiscApp.csproj",
+        "projectPath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
         "packagesPath": "C:\\Users\\mike\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mike\\source\\repos\\C#DiscApp\\obj\\",
+        "outputPath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -73,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

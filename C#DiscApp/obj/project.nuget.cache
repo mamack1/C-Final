@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gij1/XxHL3tBQxgLCRCNVxwDiifehe/j6YOKXULkDeqS/FOPZAvjback/wIZ4LNUEzJ3doP8EBo2L+YhZ3zjfQ==",
+  "dgSpecHash": "mlG6Svwl9jA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mike\\source\\repos\\C#DiscApp\\C#DiscApp.csproj",
+  "projectFilePath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mike\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\mike\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
