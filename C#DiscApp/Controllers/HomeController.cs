@@ -8,5 +8,21 @@ namespace C_DiscApp.Controllers
         {
             return View();
         }
+
+        public IActionResult Inventory()
+        {
+            return View();
+        }
+
+        public IActionResult Course()
+        {
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
     }
 }
+
