@@ -523,3 +523,5 @@ $RECYCLE.BIN/
 .vs/slnx.sqlite
 
 .vs/C#DiscApp/v17/*.suo
+
+.vs/C#DiscApp/DesignTimeBuild/.dtbcache.v2
