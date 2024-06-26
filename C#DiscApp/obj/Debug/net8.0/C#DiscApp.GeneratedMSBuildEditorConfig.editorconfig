@@ -17,27 +17,39 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = C_DiscApp
 build_property.RootNamespace = C_DiscApp
-build_property.ProjectDir = Z:\DMACC\Computer Information Systems AAS\Advanced C#\C-Final\C#DiscApp\
+build_property.ProjectDir = C:\Users\Daniel\source\repos\C-Final\CSharpApp\C#DiscApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = Z:\DMACC\Computer Information Systems AAS\Advanced C#\C-Final\C#DiscApp
+build_property.MSBuildProjectDirectory = C:\Users\Daniel\source\repos\C-Final\CSharpApp\C#DiscApp
 build_property._RazorSourceGeneratorDebug = 
 
-[Z:/DMACC/Computer Information Systems AAS/Advanced C\#/C-Final/C\#DiscApp/Views/Home/course.cshtml]
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/Home/course.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb3Vyc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/DMACC/Computer Information Systems AAS/Advanced C\#/C-Final/C\#DiscApp/Views/Home/index.cshtml]
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/DMACC/Computer Information Systems AAS/Advanced C\#/C-Final/C\#DiscApp/Views/Home/inventory.cshtml]
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/Home/inventory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbnZlbnRvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/DMACC/Computer Information Systems AAS/Advanced C\#/C-Final/C\#DiscApp/Views/Home/login.cshtml]
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/Home/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Daniel/source/repos/C-Final/CSharpApp/C\#DiscApp/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
