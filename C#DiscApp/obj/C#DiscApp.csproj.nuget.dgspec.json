@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {}
+    "D:\\Projects\\Final Project\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {}
   },
   "projects": {
-    "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {
+    "D:\\Projects\\Final Project\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
+        "projectUniqueName": "D:\\Projects\\Final Project\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
         "projectName": "C#DiscApp",
-        "projectPath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
-        "packagesPath": "C:\\Users\\mike\\.nuget\\packages\\",
-        "outputPath": "Z:\\DMACC\\Computer Information Systems AAS\\Advanced C#\\C-Final\\C#DiscApp\\obj\\",
+        "projectPath": "D:\\Projects\\Final Project\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
+        "packagesPath": "C:\\Users\\sabdu\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\Final Project\\C-Final\\C#DiscApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mike\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sabdu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
