@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\C#DiscApp",
-    "\\C#DiscApp\\Views",
-    "\\C#DiscApp\\Views\\Home"
+    ""
   ],
-  "SelectedNode": "\\C#DiscApp\\Views\\Home\\course.cshtml",
+  "SelectedNode": "\\C#DiscApp.sln",
   "PreviewInSolutionExplorer": false
 }
