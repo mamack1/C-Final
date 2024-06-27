@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -70,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "course.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\course.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\course.cshtml",
@@ -83,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "index.cshtml",
               "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\index.cshtml",
@@ -91,7 +91,8 @@
               "RelativeToolTip": "Views\\Home\\index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-26T00:06:38.842Z"
+              "WhenOpened": "2024-06-26T00:06:38.842Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
