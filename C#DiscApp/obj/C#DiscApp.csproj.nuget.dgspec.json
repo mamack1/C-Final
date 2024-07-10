@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\C#DiscApp.csproj": {}
+    "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\C#DiscApp.csproj": {
+    "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\C#DiscApp.csproj",
+        "projectUniqueName": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
         "projectName": "C#DiscApp",
-        "projectPath": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\C#DiscApp.csproj",
-        "packagesPath": "C:\\Users\\Daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\obj\\",
+        "projectPath": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj",
+        "packagesPath": "C:\\Users\\mkemc\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mkemc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,9 +50,19 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.3, )"
             },
             "bootstrap": {
               "target": "Package",

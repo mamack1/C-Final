@@ -1,30 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\",
+  "WorkspaceRootPath": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\course.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\data\\disccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:data\\disccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\models\\disc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:models\\disc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\views\\inventory\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\inventory\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\daniel\\source\\repos\\c-final\\csharpapp\\c#discapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\inventory\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\views\\inventory\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\inventory\\inventory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|c:\\users\\mkemc\\source\\repos\\c-final\\c#discapp\\views\\inventory\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}|C#DiscApp.csproj|solutionrelative:views\\inventory\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,77 +54,107 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\login.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\login.cshtml",
-              "ToolTip": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\login.cshtml",
-              "RelativeToolTip": "Views\\Home\\login.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-26T01:18:08.608Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "inventory.cshtml",
-              "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\inventory.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\inventory.cshtml",
-              "ToolTip": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\inventory.cshtml",
-              "RelativeToolTip": "Views\\Home\\inventory.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-26T01:18:04.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "course.cshtml",
-              "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\course.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\course.cshtml",
-              "ToolTip": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\course.cshtml",
-              "RelativeToolTip": "Views\\Home\\course.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAACSAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-25T19:17:09.621Z",
+              "DocumentIndex": 0,
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\InventoryController.cs",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "Controllers\\InventoryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T16:50:28.574Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\index.cshtml",
-              "ToolTip": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Views\\Home\\index.cshtml",
-              "RelativeToolTip": "Views\\Home\\index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABdAAAA",
+              "DocumentIndex": 3,
+              "Title": "Disc.cs",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Models\\Disc.cs",
+              "RelativeDocumentMoniker": "Models\\Disc.cs",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Models\\Disc.cs",
+              "RelativeToolTip": "Models\\Disc.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAuwBsAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T16:50:26.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAByAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-26T00:06:38.842Z",
+              "WhenOpened": "2024-07-10T16:50:20.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DiscContext.cs",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Data\\DiscContext.cs",
+              "RelativeDocumentMoniker": "Data\\DiscContext.cs",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Data\\DiscContext.cs",
+              "RelativeToolTip": "Data\\DiscContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-10T16:56:27.45Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAwCAAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-26T00:03:50.606Z"
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inventory\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Inventory\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T16:49:25.572Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Daniel\\source\\repos\\C-Final\\CSharpApp\\C#DiscApp\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inventory\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Inventory\\Edit.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T19:16:54.086Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T16:49:09.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Add.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inventory\\Add.cshtml",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Add.cshtml",
+              "RelativeToolTip": "Views\\Inventory\\Add.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-10T16:48:47.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inventory.cshtml",
+              "DocumentMoniker": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Inventory.cshtml",
+              "RelativeDocumentMoniker": "Views\\Inventory\\Inventory.cshtml",
+              "ToolTip": "C:\\Users\\mkemc\\source\\repos\\C-Final\\C#DiscApp\\Views\\Inventory\\Inventory.cshtml",
+              "RelativeToolTip": "Views\\Inventory\\Inventory.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-26T01:18:04.561Z",
+              "EditorCaption": ""
             }
           ]
         }
