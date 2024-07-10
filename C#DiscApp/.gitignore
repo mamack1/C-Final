@@ -527,3 +527,6 @@ $RECYCLE.BIN/
 .vs/C#DiscApp/DesignTimeBuild/.dtbcache.v2
 
 .vs/
+# Ignore Visual Studio files
+.vs/
+*.sqlite
