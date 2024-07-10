@@ -1,3 +1,7 @@
+using C_DiscApp.Data;
+using System.Configuration;
+using Microsoft.EntityFrameworkCore;
+
 namespace C_DiscApp
 {
     public class Program
@@ -5,9 +9,13 @@ namespace C_DiscApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            //var configuration = builder.Configuration;
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddDbContext<DiscContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 

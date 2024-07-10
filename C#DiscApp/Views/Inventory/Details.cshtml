@@ -1,7 +1,7 @@
 ﻿@model C_DiscApp.Models.Disc
 
 @{
-    ViewData["Title"] = "Delete Disc";
+    ViewData["Title"] = "Disc Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -14,9 +14,8 @@
 </head>
 <body>
 
-    <h1>Delete Disc</h1>
+    <h1>Disc Details</h1>
 
-    <h3>Are you sure you want to delete this?</h3>
     <div>
         <h4>Disc</h4>
         <hr />
@@ -52,10 +51,10 @@
                 @Html.DisplayFor(model => model.Color)
             </dd>
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.ImageUrl)
+                Image
             </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.ImageUrl)
+                <img src="@Model.ImageUrl" alt="Disc Image" class="img-fluid" style="max-width: 300px;" />
             </dd>
             <dt class="col-sm-2">
                 @Html.DisplayNameFor(model => model.Speed)
@@ -88,12 +87,10 @@
                 @Html.DisplayFor(model => model.Description)
             </dd>
         </dl>
+    </div>
 
-        <form asp-action="DeleteConfirmed" method="post">
-            <input type="hidden" asp-for="DiscID" />
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
-        </form>
+    <div>
+        <a asp-action="Index">Back to List</a>
     </div>
 
 </body>

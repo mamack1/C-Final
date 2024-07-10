@@ -16,7 +16,7 @@ namespace C_DiscApp.Models
         public string Type { get; set; } // e.g., Driver, Midrange, Putter
 
         [Required]
-        public double Weight { get; set; } // Weight of the disc in grams
+        public string Weight { get; set; } // Weight of the disc in grams
 
         [Required]
         [StringLength(50)]
@@ -27,13 +27,13 @@ namespace C_DiscApp.Models
 
         public string ImageUrl { get; set; } // URL to an image of the disc
 
-        [Range(1, 12)]
+        [Range(1, 15)]
         public int Speed { get; set; } // Flight number: Speed
 
         [Range(1, 7)]
         public int Glide { get; set; } // Flight number: Glide
 
-        [Range(-5, 1)]
+        [Range(-5, 5)]
         public int Turn { get; set; } // Flight number: Turn
 
         [Range(0, 5)]
@@ -42,9 +42,9 @@ namespace C_DiscApp.Models
         [StringLength(500)]
         public string Description { get; set; }
 
-        public int UserID { get; set; }
+        //public int UserID { get; set; }
 
-        [ForeignKey("UserID")]
-        public virtual User User { get; set; }
+        //[ForeignKey("UserID")]
+        //public virtual User User { get; set; }
     }
 }

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<C_DiscApp.Models.Disc>
+
+@{
+    ViewData["Title"] = "Disc Inventory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <h1>My Discs</h1>
+
+        <p>
+            <a asp-action="Add" class="btn btn-primary">Create New</a>
+        </p>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Weight (g)</th>
+                    <th>Brand</th>
+                    <th>Color</th>
+                    <th>Speed</th>
+                    <th>Glide</th>
+                    <th>Turn</th>
+                    <th>Fade</th>
+                    <th>Description</th>
+                    <th>User ID</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.DiscID</td>
+                        <td>@item.Name</td>
+                        <td>@item.Type</td>
+                        <td>@item.Weight</td>
+                        <td>@item.Brand</td>
+                        <td>@item.Color</td>
+                        <td>@item.Speed</td>
+                        <td>@item.Glide</td>
+                        <td>@item.Turn</td>
+                        <td>@item.Fade</td>
+                        <td>@item.Description</td>
+                        <!--<td>@*@item.UserID*@</td>-->
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.DiscID">Details</a> |
+                            <a asp-action="Edit" asp-route-id="@item.DiscID">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.DiscID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
