@@ -1,17 +1,108 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
-
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>course</title>
+    <title>Find Nearest Disc Golf Courses</title>
+    <style>
+        #courseInfo {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .loading {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            document.getElementById("courseInfo").innerText = "Loading...";
+            fetch(`/Course/SearchNearestCourse?latitude=${latitude}&longitude=${longitude}`)
+                .then(response => response.json())
+                .then(data => {
+                    var courseInfoDiv = document.getElementById("courseInfo");
+                    courseInfoDiv.innerHTML = "";
+
+                    if (data.error) {
+                        courseInfoDiv.innerText = `Error: ${data.error}`;
+                    } else if (data.message) {
+                        courseInfoDiv.innerText = data.message;
+                    } else {
+                        data.forEach(course => {
+                            var courseElement = document.createElement("div");
+                            var distance = course.distance.toFixed(2) + " km";
+                            courseElement.innerHTML = `
+                                        <strong>Course:</strong> ${course.name}<br>
+                                        <strong>Address:</strong> ${course.address}<br>
+                                        <strong>Distance:</strong> ${distance}
+                                    `;
+                            courseInfoDiv.appendChild(courseElement);
+                            courseInfoDiv.appendChild(document.createElement("hr")); // Add a separator
+                        });
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("courseInfo").innerText = `Fetch error: ${error.message}`;
+                });
+        }
+
+        function showError(error) {
+            let errorMessage = "";
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    errorMessage = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorMessage = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    errorMessage = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    errorMessage = "An unknown error occurred.";
+                    break;
+            }
+            document.getElementById("courseInfo").innerText = errorMessage;
+        }
+
+        window.onload = getLocation;
+    </script>
 </head>
 <body>
-    <div class="text-center">
-        <p>This page is to house a list of courses from the API provided, maybe automatically be sorted by distance starting from closest to user?</p>
+    <h2>Find Nearest Disc Golf Course</h2>
+    <div id="courseInfo" class="loading">Fetching your location...</div>
+
+    <div id="coursesList">
+        @foreach (var course in Model)
+        {
+            <div class="course">
+                <h3>@course.name</h3>
+                <p>@course.address</p>
+                <p>Distance: @course.distance.toFixed(2) km</p>
+                <a class="btn btn-primary" href="@course.playUrl">Play</a>
+            </div>
+        }
+    </div>
 </body>
 </html>
+

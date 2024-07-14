@@ -17,6 +17,9 @@ namespace C_DiscApp
             builder.Services.AddDbContext<DiscContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+            // Register IHttpClientFactory
+            builder.Services.AddHttpClient();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
