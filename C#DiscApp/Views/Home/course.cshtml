@@ -89,20 +89,8 @@
     </script>
 </head>
 <body>
-    <h2>Find Nearest Disc Golf Course</h2>
+    <h2>Find Nearest Disc Golf Courses</h2>
     <div id="courseInfo" class="loading">Fetching your location...</div>
-
-    <div id="coursesList">
-        @foreach (var course in Model)
-        {
-            <div class="course">
-                <h3>@course.name</h3>
-                <p>@course.address</p>
-                <p>Distance: @course.distance.toFixed(2) km</p>
-                <a class="btn btn-primary" href="@course.playUrl">Play</a>
-            </div>
-        }
-    </div>
 </body>
 </html>
 
