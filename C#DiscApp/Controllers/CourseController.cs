@@ -25,7 +25,7 @@ namespace C_DiscApp.Controllers
         {
             try
             {
-                var apiKey = "AIzaSyDrNS4b5GrOQWSivhmmggZVEo9_yof0oP4";
+                var apiKey = "API KEY HERE";
                 var radius = 5000; // Search radius in meters
                 var keyword = "disc golf course";
 
