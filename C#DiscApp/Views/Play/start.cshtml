@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Game at @ViewBag.CourseName</title>
+</head>
+<body>
+    <h1>Playing at @ViewBag.CourseName</h1>
+    <h2>@ViewBag.CourseAddress</h2>
+
+    <form asp-action="Start" asp-controller="Play" method="post">
+        <div>
+            <label for="numberOfHoles">Number of Holes:</label>
+            <input type="number" id="numberOfHoles" name="numberOfHoles" min="1" required>
+        </div>
+        <button type="submit">Start Game</button>
+    </form>
+</body>
+</html>
+

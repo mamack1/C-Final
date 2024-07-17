@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
@@ -21,12 +23,11 @@ namespace C_DiscApp.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SearchNearestCourse(double latitude, double longitude)
+        public async Task<IActionResult> SearchNearestCourse(double latitude, double longitude, int radius = 5000)
         {
             try
             {
                 var apiKey = "API KEY HERE";
-                var radius = 5000; // Search radius in meters
                 var keyword = "disc golf course";
 
                 var url = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius={radius}&keyword={Uri.EscapeDataString(keyword)}&key={apiKey}";
@@ -37,16 +38,37 @@ namespace C_DiscApp.Controllers
                 var json = JObject.Parse(response);
                 var results = json["results"];
 
-                // Limit the number of results to 3 closest courses
-                var closestCourses = results.Take(3).Select(course => new
+                // Filter out duplicate addresses and calculate distances
+                var uniqueCourses = new List<(string name, string address, double? distance)>();
+                var uniqueAddresses = new HashSet<string>();
+
+                foreach (var course in results)
                 {
-                    name = course["name"].ToString(),
-                    address = course["vicinity"].ToString(),
-                    distance = CalculateDistance(latitude, longitude,
-                                                 double.Parse(course["geometry"]["location"]["lat"].ToString()),
-                                                 double.Parse(course["geometry"]["location"]["lng"].ToString())),
-                    playUrl = $"~/Course/PlayCourse?courseId={course["place_id"]}" // Example URL, adjust as needed
-                });
+                    var courseAddress = course["vicinity"].ToString();
+                    if (!uniqueAddresses.Contains(courseAddress))
+                    {
+                        uniqueAddresses.Add(courseAddress);
+
+                        var courseName = course["name"].ToString();
+                        var courseLat = double.Parse(course["geometry"]["location"]["lat"].ToString());
+                        var courseLng = double.Parse(course["geometry"]["location"]["lng"].ToString());
+                        var distance = CalculateDistance(latitude, longitude, courseLat, courseLng);
+
+                        uniqueCourses.Add((courseName, courseAddress, distance));
+                    }
+                }
+
+                // Sort the courses by distance and take the top 5
+                var closestCourses = uniqueCourses
+                    .Where(course => course.distance.HasValue)
+                    .OrderBy(course => course.distance.Value)
+                    .Take(5)
+                    .Select(course => new
+                    {
+                        course.name,
+                        course.address,
+                        distance = course.distance.Value
+                    });
 
                 if (!closestCourses.Any())
                 {
@@ -57,7 +79,7 @@ namespace C_DiscApp.Controllers
             }
             catch (Exception ex)
             {
-                // Handle exceptions
+                // Log the exception (ex)
                 return Json(new { error = ex.Message });
             }
         }
@@ -77,14 +99,6 @@ namespace C_DiscApp.Controllers
 
             var distance = R * c;
             return distance / 1000; // Convert to kilometers
-        }
-
-        [HttpGet]
-        public IActionResult PlayCourse(string courseId)
-        {
-            // Retrieve course details based on courseId, if needed
-            // Render the gameplay view or redirect to a form to select number of holes
-            return View();
         }
     }
 }
