@@ -1,6 +1,8 @@
 using C_DiscApp.Data;
 using System.Configuration;
 using Microsoft.EntityFrameworkCore;
+using C_DiscApp.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace C_DiscApp
 {
@@ -11,11 +13,24 @@ namespace C_DiscApp
             var builder = WebApplication.CreateBuilder(args);
             //var configuration = builder.Configuration;
 
+            builder.Services.AddMemoryCache();
+            builder.Services.AddSession();
+            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<DiscContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+            })
+            .AddEntityFrameworkStores<DiscContext>()
+            .AddDefaultTokenProviders();
 
             // Register IHttpClientFactory
             builder.Services.AddHttpClient();
@@ -36,6 +51,9 @@ namespace C_DiscApp
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
+
+            app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",

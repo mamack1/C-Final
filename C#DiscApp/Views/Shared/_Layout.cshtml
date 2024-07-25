@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@{
+    Layout = null;
+    var action = ViewContext.RouteData.Values["action"]?.ToString();
+    var isActiveRegister = (action == "Register") ? "active" : "";
+    var isActiveLogin = (action == "LogIn") ? "active" : "";
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -28,9 +35,36 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Course">Course</a>
                         </li>
+                        <!--
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
                         </li>
+                        -->
+                        @using C_DiscApp.Models;
+                        @using Microsoft.AspNetCore.Identity;
+                        @inject SignInManager<User> signInManager;
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <form method="post" asp-action="LogOut"
+                                      asp-controller="Account" asp-area="">
+                                    <input type="submit" value="Log Out" class="btn btn-outline-light" />
+                                    <span class="text-light">@User.Identity.Name</span>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item @isActiveRegister">
+                                <a asp-action="Register" asp-controller="Account" asp-area="" class="nav-link">
+                                    <span class="fas fa-edit"></span>&nbsp;Register
+                                </a>
+                            </li>
+                            <li class="nav-item @isActiveLogin">
+                                <a asp-action="LogIn" asp-controller="Account" asp-area=""
+                                   class="btn btn-outline-light">Log In</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

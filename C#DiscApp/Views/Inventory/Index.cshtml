@@ -1,4 +1,4 @@
-﻿@model IEnumerable<C_DiscApp.Models.Disc>
+﻿@* @model IEnumerable<C_DiscApp.Models.Disc>
 
 @{
     ViewData["Title"] = "Disc Inventory";
@@ -55,7 +55,7 @@
                         <td>@item.Turn</td>
                         <td>@item.Fade</td>
                         <td>@item.Description</td>
-                        <!--<td>@*@item.UserID*@</td>-->
+                        <!--<td>@item.UserID</td>-->
                         <td>
                             <a asp-action="Details" asp-route-id="@item.DiscID">Details</a> |
                             <a asp-action="Edit" asp-route-id="@item.DiscID">Edit</a> |
@@ -68,4 +68,116 @@
     </div>
 
 </body>
+</html> *@
+
+@model IEnumerable<C_DiscApp.Models.Disc>
+
+@{
+    ViewData["Title"] = "Disc Inventory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+    <h1>Disc Inventory</h1>
+
+    <p>
+        <a asp-action="Add" class="btn btn-primary">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Weight)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Brand)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Color)
+                </th>
+                <th>
+                    Image
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Speed)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Glide)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Turn)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Weight)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Brand)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        <img src="@item.ImageUrl" alt="Disc Image" class="img-fluid" style="max-width: 100px;" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Speed)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Glide)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Turn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.DiscID" class="btn btn-primary">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.DiscID" class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.DiscID" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
 </html>
+

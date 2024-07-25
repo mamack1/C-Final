@@ -1,4 +1,4 @@
-﻿@model C_DiscApp.Models.Disc
+﻿@* @model C_DiscApp.Models.Disc
 
 @{
     ViewData["Title"] = "Disc Details";
@@ -94,4 +94,104 @@
     </div>
 
 </body>
+</html> *@
+
+@model C_DiscApp.Models.Disc
+
+@{
+    ViewData["Title"] = "Disc Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+
+    <h1>Disc Details</h1>
+
+    <div>
+        <h4>Disc</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Weight)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Weight)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Brand)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Brand)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Color)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Color)
+            </dd>
+            <dt class="col-sm-2">
+                Image
+            </dt>
+            <dd class="col-sm-10">
+                <img src="@Model.ImageUrl" alt="Disc Image" class="img-fluid" style="max-width: 300px;" />
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Speed)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Speed)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Glide)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Glide)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Turn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Turn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Fade)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Fade)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+        </dl>
+    </div>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.DiscID" class="btn btn-primary">Edit</a> |
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+
+</body>
 </html>
+
