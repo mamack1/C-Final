@@ -3,16 +3,20 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using System.Linq;
+using Microsoft.Extensions.Configuration;
 
 namespace C_DiscApp.Controllers
 {
     public class CourseController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;
+        private readonly IConfiguration _configuration;
 
-        public CourseController(IHttpClientFactory httpClientFactory)
+        public CourseController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
             _httpClientFactory = httpClientFactory;
+            _configuration = configuration;
         }
 
         public IActionResult Index()
@@ -25,7 +29,7 @@ namespace C_DiscApp.Controllers
         {
             try
             {
-                var apiKey = "API KEY HERE";
+                var apiKey = _configuration["GoogleApiKey"];
                 var radius = 5000; // Search radius in meters
                 var keyword = "disc golf course";
 
@@ -58,7 +62,7 @@ namespace C_DiscApp.Controllers
             catch (Exception ex)
             {
                 // Handle exceptions
-                return Json(new { error = ex.Message });
+                return Json(new { error = "An error occurred" });
             }
         }
 

@@ -1,22 +1,24 @@
 ﻿using C_DiscApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using C_DiscApp.Views.ViewModels;
+using System.Threading.Tasks;
+using C_DiscApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace C_DiscApp.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
-        private UserManager<User> userManager;
-        private SignInManager<User> signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
         {
-            this.userManager = userManager;
-            this.signInManager = signInManager;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        // Register
         [HttpGet("Account/Register")]
         public IActionResult Register()
         {
@@ -28,11 +30,19 @@ namespace C_DiscApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Username };
-                var result = await userManager.CreateAsync(user, model.Password);
+                var user = new User
+                {
+                    UserName = model.Username,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName, 
+                    DateJoined = DateTime.Now,
+                    ProfileImageUrl = model.ProfileImageUrl
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await signInManager.SignInAsync(user, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -43,10 +53,15 @@ namespace C_DiscApp.Controllers
                     }
                 }
             }
+            else
+            {
+                // Log or debug to see the errors in ModelState
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+                // Log any errors - Added to inspect them for debugging
+            }
             return View(model);
         }
 
-        // Login
         [HttpGet("Account/LogIn")]
         public IActionResult LogIn(string returnURL = "")
         {
@@ -59,14 +74,13 @@ namespace C_DiscApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await signInManager.PasswordSignInAsync(
+                var result = await _signInManager.PasswordSignInAsync(
                     model.Username, model.Password,
                     isPersistent: model.RememberMe,
                     lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    if (!string.IsNullOrEmpty(model.ReturnUrl) &&
-                        Url.IsLocalUrl(model.ReturnUrl))
+                    if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
                     {
                         return Redirect(model.ReturnUrl);
                     }
@@ -80,15 +94,13 @@ namespace C_DiscApp.Controllers
             return View(model);
         }
 
-        // Logout
         [HttpPost("Account/LogOut")]
         public async Task<IActionResult> LogOut()
         {
-            await signInManager.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 
-        // Index
         [HttpGet("Account/Index")]
         public IActionResult Index()
         {

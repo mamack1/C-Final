@@ -8,15 +8,16 @@ namespace C_DiscApp.Models
         public int DiscID { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(100, MinimumLength = 2)]
         public string Name { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Type { get; set; } // e.g., Driver, Midrange, Putter
+        public string Type { get; set; }
 
         [Required]
-        public string Weight { get; set; } // Weight of the disc in grams
+        [Range(1, 200)]
+        public int Weight { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -25,19 +26,20 @@ namespace C_DiscApp.Models
         [StringLength(30)]
         public string Color { get; set; }
 
-        public string ImageUrl { get; set; } // URL to an image of the disc
+        [Url]
+        public string ImageUrl { get; set; }
 
         [Range(1, 15)]
-        public int Speed { get; set; } // Flight number: Speed
+        public int Speed { get; set; }
 
         [Range(1, 7)]
-        public int Glide { get; set; } // Flight number: Glide
+        public int Glide { get; set; }
 
         [Range(-5, 5)]
-        public int Turn { get; set; } // Flight number: Turn
+        public int Turn { get; set; }
 
         [Range(0, 5)]
-        public int Fade { get; set; } // Flight number: Fade
+        public int Fade { get; set; }
 
         [StringLength(500)]
         public string Description { get; set; }

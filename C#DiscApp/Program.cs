@@ -1,8 +1,10 @@
 using C_DiscApp.Data;
-using System.Configuration;
-using Microsoft.EntityFrameworkCore;
+using C_DiscApp.Middleware;
+using C_DiscApp.ViewModels;
 using C_DiscApp.Models;
+using C_DiscApp.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace C_DiscApp
 {
@@ -11,53 +13,63 @@ namespace C_DiscApp
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            //var configuration = builder.Configuration;
-
-            builder.Services.AddMemoryCache();
-            builder.Services.AddSession();
-            builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<DiscContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            builder.Services.AddIdentity<User, IdentityRole>(options =>
+            builder.Services.AddDefaultIdentity<User>(options =>
             {
-                options.Password.RequiredLength = 6;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireDigit = false;
+                options.SignIn.RequireConfirmedAccount = false;
             })
-            .AddEntityFrameworkStores<DiscContext>()
-            .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<DiscContext>();
 
-            // Register IHttpClientFactory
-            builder.Services.AddHttpClient();
+            // Add session services
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<LogActionFilter>(); // Register globally
+            });
+            builder.Services.AddRazorPages();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
+            if (app.Environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            // Custom exception handling middleware
+            app.UseMiddleware<CustomExceptionHandlerMiddleware>();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
+            app.UseAuthorization();
 
+            // Use session middleware
             app.UseSession();
 
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+            app.MapRazorPages();
 
             app.Run();
         }

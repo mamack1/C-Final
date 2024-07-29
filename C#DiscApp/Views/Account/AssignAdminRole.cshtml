@@ -1,0 +1,37 @@
+﻿@using C_DiscApp.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManagercl
+@model IEnumerable<User>
+
+@{
+    ViewData["Title"] = "Assign Admin Role";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Assign Admin Role</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>
+                    <form asp-action="AssignAdminRole" method="post">
+                        <input type="hidden" name="userId" value="@user.Id" />
+                        <button type="submit" class="btn btn-primary">Assign Admin Role</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

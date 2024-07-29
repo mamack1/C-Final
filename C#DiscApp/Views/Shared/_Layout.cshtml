@@ -1,9 +1,7 @@
-﻿@{
-    Layout = null;
-    var action = ViewContext.RouteData.Values["action"]?.ToString();
-    var isActiveRegister = (action == "Register") ? "active" : "";
-    var isActiveLogin = (action == "LogIn") ? "active" : "";
-}
+﻿@using C_DiscApp.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,43 +27,23 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="inventory" asp-action="index">Inventory</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Course">Course</a>
-                        </li>
-                        <!--
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
-                        </li>
-                        -->
-                        @using C_DiscApp.Models;
-                        @using Microsoft.AspNetCore.Identity;
-                        @inject SignInManager<User> signInManager;
-                        @if (signInManager.IsSignedIn(User))
+                        @if (SignInManager.IsSignedIn(User))
                         {
                             <li class="nav-item">
-                                <form method="post" asp-action="LogOut"
-                                      asp-controller="Account" asp-area="">
-                                    <input type="submit" value="Log Out" class="btn btn-outline-light" />
-                                    <span class="text-light">@User.Identity.Name</span>
-                                </form>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="Index">Inventory</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Course">Course</a>
                             </li>
                         }
-                        else
+                        @if (User.IsInRole("Admin"))
                         {
-                            <li class="nav-item @isActiveRegister">
-                                <a asp-action="Register" asp-controller="Account" asp-area="" class="nav-link">
-                                    <span class="fas fa-edit"></span>&nbsp;Register
-                                </a>
-                            </li>
-                            <li class="nav-item @isActiveLogin">
-                                <a asp-action="LogIn" asp-controller="Account" asp-area=""
-                                   class="btn btn-outline-light">Log In</a>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin</a>
                             </li>
                         }
                     </ul>
+                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>

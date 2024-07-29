@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C_DiscAppUnitTests", "..\C_DiscAppUnitTests\C_DiscAppUnitTests.csproj", "{FE4BF836-C20A-4DE3-9D4C-F4CD853B6567}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A07CB6BA-8B0D-4B90-B388-3485B902E4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE4BF836-C20A-4DE3-9D4C-F4CD853B6567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE4BF836-C20A-4DE3-9D4C-F4CD853B6567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE4BF836-C20A-4DE3-9D4C-F4CD853B6567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE4BF836-C20A-4DE3-9D4C-F4CD853B6567}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
