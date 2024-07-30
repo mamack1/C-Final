@@ -27,7 +27,7 @@ namespace C_DiscApp.Controllers
         {
             try
             {
-                var apiKey = "API KEY HERE";
+                var apiKey = "AIzaSyDuGEZIxHMoYgkXNgPHa6teNekF6NS9ktc ";
                 var keyword = "disc golf course";
 
                 var url = $"https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={latitude},{longitude}&radius={radius}&keyword={Uri.EscapeDataString(keyword)}&key={apiKey}";

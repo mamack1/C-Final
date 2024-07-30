@@ -16,6 +16,10 @@ namespace C_DiscApp
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<DiscContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<GameHistoryContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("GameHistoryConnection")));
+
+
 
             // Register IHttpClientFactory
             builder.Services.AddHttpClient();

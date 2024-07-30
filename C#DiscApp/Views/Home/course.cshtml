@@ -30,6 +30,10 @@
             .course button {
                 margin-top: 10px;
             }
+
+            .course .hole-input {
+                margin-top: 10px;
+            }
     </style>
     <script>
         function getLocation() {
@@ -64,7 +68,11 @@
                                         <strong>Course:</strong> ${course.name}<br>
                                         <strong>Address:</strong> ${course.address}<br>
                                         <strong>Distance:</strong> ${distance}<br>
-                                        <button onclick="playHere('${course.name}', '${course.address}', ${course.distance})">Play here</button>
+                                        <div class="hole-input">
+                                            <label for="holes-${course.name}">Number of Holes:</label>
+                                            <input type="number" id="holes-${course.name}" name="numberOfHoles" min="1" value="9" />
+                                        </div>
+                                        <button onclick="playHere('${course.name}', '${course.address}', ${course.distance}, document.getElementById('holes-${course.name}').value)">Play here</button>
                                     `;
                             courseInfoDiv.appendChild(courseElement);
                             courseInfoDiv.appendChild(document.createElement("hr")); // Add a separator
@@ -76,8 +84,8 @@
                 });
         }
 
-        function playHere(name, address, distance) {
-            var url = `/Play/Start?name=${encodeURIComponent(name)}&address=${encodeURIComponent(address)}&distance=${distance}`;
+        function playHere(name, address, distance, numberOfHoles) {
+            var url = `/Play/Start?name=${encodeURIComponent(name)}&address=${encodeURIComponent(address)}&distance=${distance}&numberOfHoles=${numberOfHoles}`;
             window.location.href = url;
         }
 
@@ -108,4 +116,3 @@
     <div id="courseInfo" class="loading">Fetching your location...</div>
 </body>
 </html>
-

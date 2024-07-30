@@ -1,0 +1,39 @@
+﻿@model IEnumerable<C_DiscApp.Models.GameHistory>
+
+@{
+    ViewBag.Title = "Game History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Game History</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date Played</th>
+                <th>Course Name</th>
+                <th>Number of Holes</th>
+                <th>Total Par Throws</th>
+                <th>Total Throws</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var gameHistory in Model)
+            {
+                <tr>
+                    <td>@gameHistory.DatePlayed.ToString("g")</td>
+                    <td>@gameHistory.CourseName</td>
+                    <td>@gameHistory.NumberOfHoles</td>
+                    <td>@gameHistory.TotalParThrows</td>
+                    <td>@gameHistory.TotalThrows</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No game history available.</p>
+}

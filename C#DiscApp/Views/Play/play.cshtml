@@ -1,78 +1,42 @@
 ﻿@{
+    ViewBag.Title = "Play";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Play Game</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+<h2>Playing at @ViewBag.CourseName</h2>
+<p>@ViewBag.CourseAddress</p>
+<p>Distance: @ViewBag.CourseDistance km</p>
 
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
+<form method="post" asp-action="SaveGame" asp-controller="Play">
+    <input type="hidden" name="courseName" value="@ViewBag.CourseName" />
+    <input type="hidden" name="numberOfHoles" value="@ViewBag.NumberOfHoles" />
 
-        .throw-btn {
-            display: inline-block;
-            padding: 5px 10px;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
-            border: none;
-            border-radius: 3px;
-        }
-    </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var throwButtons = document.querySelectorAll(".throw-btn");
-            throwButtons.forEach(function (button) {
-                button.addEventListener("click", function () {
-                    var holeNumber = button.getAttribute("data-hole-number");
-                    var displaySpan = document.getElementById("throws-display" + holeNumber);
-                    if (displaySpan) {
-                        var currentThrows = parseInt(displaySpan.innerText) || 0;
-                        displaySpan.innerText = currentThrows + 1;
-                    } else {
-                        console.error("Display span not found for hole " + holeNumber + displaySpan);
-                    }
-                });
-            });
-        });
-    </script>
-</head>
-<body>
-    <h2>Play Game at @ViewBag.CourseName</h2>
-    <h3>@ViewBag.CourseAddress</h3>
-    <form>
-        <table>
-            <thead>
-                <tr>
-                    <th>Hole</th>
-                    <th>Par</th>
-                    <th>Throws</th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 1; i <= ViewBag.NumberOfHoles; i++)
-                {
-                    <tr>
-                        <td>Hole @i</td>
-                        <td><input type="number" name="par@i" min="1" required></td>
-                        <td>
-                            <span id="throws-display@(i)">0</span>
-                            <button type="button" class="throw-btn" data-hole-number="@i">+1 Throw</button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-        <button type="submit">Submit Scores</button>
-    </form>
-</body>
-</html>
+    @for (int i = 0; i < ViewBag.NumberOfHoles; i++)
+    {
+        <div>
+            <label>Hole @(i + 1)</label>
+            <div>
+                <label>Par:</label>
+                <input type="number" name="pars" required />
+            </div>
+            <div>
+                <label>Throws:</label>
+                <input type="hidden" name="throws" id="throws-@i" value="0" />
+                <span id="throws-display-@i">0</span>
+                <button type="button" onclick="incrementThrows(@i)">+ Throw</button>
+            </div>
+        </div>
+    }
+
+    <button type="submit">Save Game</button>
+</form>
+
+<script>
+    function incrementThrows(holeIndex) {
+        var input = document.getElementById('throws-' + holeIndex);
+        var display = document.getElementById('throws-display-' + holeIndex);
+        input.value = parseInt(input.value) + 1;
+        display.innerText = input.value;
+    }
+
+</script>
