@@ -21,11 +21,6 @@ namespace C_DiscApp.Models
         [Range(1, 10)]
         public int Ranking { get; set; } // Course ranking from 1 to 10
 
-        // Foreign Key for User
-        public string UserId { get; set; }
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
-
         public virtual ICollection<GameHistory> GameHistories { get; set; }
     }
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("C_DiscAppUnitTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec39cf6cbecbdb0e4e577a9470683ff2172438ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("C_DiscAppUnitTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("C_DiscAppUnitTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

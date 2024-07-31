@@ -44,10 +44,6 @@ namespace C_DiscApp.Models
         [StringLength(500)]
         public string Description { get; set; }
 
-        // Foreign Key for User
         public string UserId { get; set; }
-
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
     }
 }

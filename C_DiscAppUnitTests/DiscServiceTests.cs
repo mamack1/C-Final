@@ -1,10 +1,10 @@
 using C_DiscApp.Models;
 using C_DiscApp.Services;
 using Microsoft.EntityFrameworkCore;
-using Xunit;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic;
+using Xunit;
 using C_DiscApp.Data;
 
 namespace C_DiscAppUnitTests
@@ -29,10 +29,11 @@ namespace C_DiscAppUnitTests
         {
             // Arrange
             var dbContext = GetInMemoryDbContext();
+            var userId = "userId1";
 
             dbContext.Discs.AddRange(
-                new Disc { DiscID = 1, Name = "Disc 1", UserId = "userId1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" },
-                new Disc { DiscID = 2, Name = "Disc 2", UserId = "userId1", Brand = "Brand B", Color = "Blue", Description = "Description 2", ImageUrl = "http://example.com/disc2.png", Type = "Type B" },
+                new Disc { DiscID = 1, Name = "Disc 1", UserId = userId, Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" },
+                new Disc { DiscID = 2, Name = "Disc 2", UserId = userId, Brand = "Brand B", Color = "Blue", Description = "Description 2", ImageUrl = "http://example.com/disc2.png", Type = "Type B" },
                 new Disc { DiscID = 3, Name = "Disc 3", UserId = "userId2", Brand = "Brand C", Color = "Green", Description = "Description 3", ImageUrl = "http://example.com/disc3.png", Type = "Type C" }
             );
             await dbContext.SaveChangesAsync();
@@ -40,7 +41,7 @@ namespace C_DiscAppUnitTests
             var discService = new DiscService(dbContext);
 
             // Act
-            var result = await discService.GetAllDiscsAsync("userId1");
+            var result = await discService.GetAllDiscsAsync(userId);
 
             // Assert
             Assert.Equal(2, result.Count());
@@ -54,17 +55,18 @@ namespace C_DiscAppUnitTests
         {
             // Arrange
             var dbContext = GetInMemoryDbContext();
+            var userId = "userId1";
 
             dbContext.Discs.AddRange(
-                new Disc { DiscID = 1, Name = "Disc 1", UserId = "userId1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" },
-                new Disc { DiscID = 2, Name = "Disc 2", UserId = "userId1", Brand = "Brand B", Color = "Blue", Description = "Description 2", ImageUrl = "http://example.com/disc2.png", Type = "Type B" }
+                new Disc { DiscID = 1, Name = "Disc 1", UserId = userId, Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" },
+                new Disc { DiscID = 2, Name = "Disc 2", UserId = userId, Brand = "Brand B", Color = "Blue", Description = "Description 2", ImageUrl = "http://example.com/disc2.png", Type = "Type B" }
             );
             await dbContext.SaveChangesAsync();
 
             var discService = new DiscService(dbContext);
 
             // Act
-            var result = await discService.GetDiscByIdAsync(1, "userId1");
+            var result = await discService.GetDiscByIdAsync(1, userId);
 
             // Assert
             Assert.NotNull(result);
@@ -92,8 +94,9 @@ namespace C_DiscAppUnitTests
         {
             // Arrange
             var dbContext = GetInMemoryDbContext();
+            var userId = "userId1";
 
-            dbContext.Discs.Add(new Disc { DiscID = 1, Name = "Disc 1", UserId = "userId1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" });
+            dbContext.Discs.Add(new Disc { DiscID = 1, Name = "Disc 1", UserId = userId, Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" });
             await dbContext.SaveChangesAsync();
 
             var discService = new DiscService(dbContext);
@@ -113,14 +116,15 @@ namespace C_DiscAppUnitTests
         {
             // Arrange
             var dbContext = GetInMemoryDbContext();
+            var userId = "userId1";
 
-            dbContext.Discs.Add(new Disc { DiscID = 1, Name = "Disc 1", UserId = "userId1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" });
+            dbContext.Discs.Add(new Disc { DiscID = 1, Name = "Disc 1", UserId = userId, Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" });
             await dbContext.SaveChangesAsync();
 
             var discService = new DiscService(dbContext);
 
             // Act
-            await discService.DeleteDiscAsync(1, "userId1");
+            await discService.DeleteDiscAsync(1, userId);
 
             // Assert
             var deletedDisc = await dbContext.Discs.FirstOrDefaultAsync(d => d.DiscID == 1);

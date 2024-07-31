@@ -5,16 +5,19 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
+using C_DiscApp.Services;
 
 namespace C_DiscApp.Controllers
 {
     public class CourseController : Controller
     {
+        private readonly IDiscService _discService;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IConfiguration _configuration;
 
-        public CourseController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+        public CourseController(IDiscService discService, IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
+            _discService = discService;
             _httpClientFactory = httpClientFactory;
             _configuration = configuration;
         }
@@ -79,8 +82,11 @@ namespace C_DiscApp.Controllers
                     Math.Sin(deltaLambda / 2) * Math.Sin(deltaLambda / 2);
             var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
 
-            var distance = R * c;
-            return distance / 1000; // Convert to kilometers
+            var distance = R * c; // Distance in meters
+            // return distance / 1000; // Convert to kilometers
+            var distanceInKm = distance / 1000; // Convert to kilometers
+            var distanceInMiles = distanceInKm * 0.621371; // Convert to miles
+            return distanceInMiles;
         }
 
         [HttpGet]

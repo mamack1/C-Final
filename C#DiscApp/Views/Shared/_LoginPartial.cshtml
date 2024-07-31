@@ -4,10 +4,11 @@
 @inject UserManager<User> UserManager
 
 <ul class="navbar-nav">
-    @if (SignInManager.IsSignedIn(User))
+    @if (SignInManager?.IsSignedIn(User) == true)
     {
+        var currentUser = await UserManager.GetUserAsync(User);
         <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @currentUser?.FirstName!</a>
         </li>
         <li class="nav-item">
             <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm" class="form-inline">

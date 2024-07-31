@@ -19,7 +19,7 @@ namespace C_DiscApp.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpGet("Account/Register")]
+        /*[HttpGet("Account/Register")]
         public IActionResult Register()
         {
             return View();
@@ -99,7 +99,7 @@ namespace C_DiscApp.Controllers
         {
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
-        }
+        }*/
 
         [HttpGet("Account/Index")]
         public IActionResult Index()

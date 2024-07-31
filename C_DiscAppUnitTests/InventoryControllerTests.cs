@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xunit;
 using System.Collections.Generic;
 using System.Security.Claims;
+using Microsoft.Extensions.Logging;
 
 namespace C_DiscAppUnitTests
 {
@@ -28,7 +29,7 @@ namespace C_DiscAppUnitTests
         public async Task Index_ReturnsViewWithDiscs()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
             var userId = "userId";
             var discs = new List<Disc> { new Disc { DiscID = 1, Name = "Disc 1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" } };
 
@@ -47,7 +48,7 @@ namespace C_DiscAppUnitTests
         public void Create_ReturnsView()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
 
             // Act
             var result = controller.Create() as ViewResult;
@@ -60,7 +61,7 @@ namespace C_DiscAppUnitTests
         public async Task Create_Post_RedirectsToIndexOnSuccess()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
             var userId = "userId";
             var disc = new Disc { DiscID = 1, Name = "Disc 1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" };
 
@@ -79,7 +80,7 @@ namespace C_DiscAppUnitTests
         public async Task Edit_ReturnsViewWithDisc()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
             var userId = "userId";
             var disc = new Disc { DiscID = 1, Name = "Disc 1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" };
 
@@ -98,7 +99,7 @@ namespace C_DiscAppUnitTests
         public async Task Edit_Post_RedirectsToIndexOnSuccess()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
             var userId = "userId";
             var disc = new Disc { DiscID = 1, Name = "Disc 1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" };
 
@@ -117,7 +118,7 @@ namespace C_DiscAppUnitTests
         public async Task Delete_ReturnsViewWithDisc()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
             var userId = "userId";
             var disc = new Disc { DiscID = 1, Name = "Disc 1", Brand = "Brand A", Color = "Red", Description = "Description 1", ImageUrl = "http://example.com/disc1.png", Type = "Type A" };
 
@@ -136,7 +137,7 @@ namespace C_DiscAppUnitTests
         public async Task DeleteConfirmed_RedirectsToIndexOnSuccess()
         {
             // Arrange
-            var controller = new InventoryController(mockDiscService.Object, mockUserManager.Object);
+            var controller = new InventoryController(mockDiscService.Object, Mock.Of<ILogger<InventoryController>>(), mockUserManager.Object);
             var userId = "userId";
 
             mockUserManager.Setup(um => um.GetUserId(It.IsAny<ClaimsPrincipal>())).Returns(userId);

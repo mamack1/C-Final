@@ -79,15 +79,7 @@ namespace C_DiscApp.Controllers.Api
         public async Task<IActionResult> DeleteDisc(int id)
         {
             var userId = _userManager.GetUserId(User);
-            var disc = await _discService.GetDiscByIdAsync(id, userId);
-
-            if (disc == null)
-            {
-                return NotFound();
-            }
-
             await _discService.DeleteDiscAsync(id, userId);
-
             return NoContent();
         }
     }
