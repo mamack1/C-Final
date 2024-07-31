@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_DiscApp.Migrations
 {
     [DbContext(typeof(DiscContext))]
-<<<<<<<< HEAD:C#DiscApp/Migrations/20240731151325_initial.Designer.cs
-    [Migration("20240731151325_initial")]
+    [Migration("20240731161949_initial")]
     partial class initial
-========
-    [Migration("20240731144724_inititalCreate")]
-    partial class inititalCreate
->>>>>>>> main:C#DiscApp/Migrations/20240731144724_inititalCreate.Designer.cs
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,7 +85,6 @@ namespace C_DiscApp.Migrations
                     b.HasKey("DiscID");
 
                     b.ToTable("Discs");
-<<<<<<<< HEAD:C#DiscApp/Migrations/20240731151325_initial.Designer.cs
                 });
 
             modelBuilder.Entity("C_DiscApp.Models.GameHistory", b =>
@@ -127,8 +121,6 @@ namespace C_DiscApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("GameHistories");
-========
->>>>>>>> main:C#DiscApp/Migrations/20240731144724_inititalCreate.Designer.cs
                 });
 
             modelBuilder.Entity("C_DiscApp.Models.User", b =>

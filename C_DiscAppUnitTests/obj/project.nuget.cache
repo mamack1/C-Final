@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yYV3LR1jUmM=",
+  "dgSpecHash": "ScmNVzyifsg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dkany\\Source\\Repos\\C-Final\\C_DiscAppUnitTests\\C_DiscAppUnitTests.csproj",
+  "projectFilePath": "C:\\Users\\dkany\\source\\repos\\C-Final\\C_DiscAppUnitTests\\C_DiscAppUnitTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dkany\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\dkany\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

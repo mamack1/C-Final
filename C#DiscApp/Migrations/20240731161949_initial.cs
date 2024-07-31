@@ -6,11 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace C_DiscApp.Migrations
 {
     /// <inheritdoc />
-<<<<<<<< HEAD:C#DiscApp/Migrations/20240731151325_initial.cs
     public partial class initial : Migration
-========
-    public partial class inititalCreate : Migration
->>>>>>>> main:C#DiscApp/Migrations/20240731144724_inititalCreate.cs
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -82,7 +78,6 @@ namespace C_DiscApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-<<<<<<<< HEAD:C#DiscApp/Migrations/20240731151325_initial.cs
                 name: "GameHistories",
                 columns: table => new
                 {
@@ -102,8 +97,6 @@ namespace C_DiscApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-========
->>>>>>>> main:C#DiscApp/Migrations/20240731144724_inititalCreate.cs
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {

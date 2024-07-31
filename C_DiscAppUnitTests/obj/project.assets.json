@@ -14242,11 +14242,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dkany\\Source\\Repos\\C-Final\\C_DiscAppUnitTests\\C_DiscAppUnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\dkany\\source\\repos\\C-Final\\C_DiscAppUnitTests\\C_DiscAppUnitTests.csproj",
       "projectName": "C_DiscAppUnitTests",
-      "projectPath": "C:\\Users\\dkany\\Source\\Repos\\C-Final\\C_DiscAppUnitTests\\C_DiscAppUnitTests.csproj",
+      "projectPath": "C:\\Users\\dkany\\source\\repos\\C-Final\\C_DiscAppUnitTests\\C_DiscAppUnitTests.csproj",
       "packagesPath": "C:\\Users\\dkany\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dkany\\Source\\Repos\\C-Final\\C_DiscAppUnitTests\\obj\\",
+      "outputPath": "C:\\Users\\dkany\\source\\repos\\C-Final\\C_DiscAppUnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -14268,8 +14268,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\dkany\\Source\\Repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {
-              "projectPath": "C:\\Users\\dkany\\Source\\Repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj"
+            "C:\\Users\\dkany\\source\\repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj": {
+              "projectPath": "C:\\Users\\dkany\\source\\repos\\C-Final\\C#DiscApp\\C#DiscApp.csproj"
             }
           }
         }
