@@ -3181,7 +3181,26 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.5.3": {}
+      "xunit.runner.visualstudio/2.5.3": {},
+      "C#DiscApp/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.7",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.7",
+          "Microsoft.EntityFrameworkCore": "8.0.7",
+          "Microsoft.EntityFrameworkCore.InMemory": "8.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.7",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.7",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.3",
+          "Moq": "4.20.70",
+          "Newtonsoft.Json": "13.0.3",
+          "bootstrap": "5.3.3",
+          "Microsoft.Extensions.Http": "8.0.0",
+          "xunit": "2.5.3"
+        },
+        "runtime": {
+          "C#DiscApp.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -5044,6 +5063,11 @@
       "sha512": "sha512-HFFL6O+QLEOfs555SqHii48ovVa4CqGYanY+B32BjLpPptdE+wEJmCFNXlLHdEOD5LYeayb9EroaUpydGpcybg==",
       "path": "xunit.runner.visualstudio/2.5.3",
       "hashPath": "xunit.runner.visualstudio.2.5.3.nupkg.sha512"
+    },
+    "C#DiscApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

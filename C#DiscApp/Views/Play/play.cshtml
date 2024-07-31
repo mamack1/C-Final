@@ -11,25 +11,75 @@
     <input type="hidden" name="courseName" value="@ViewBag.CourseName" />
     <input type="hidden" name="numberOfHoles" value="@ViewBag.NumberOfHoles" />
 
-    @for (int i = 0; i < ViewBag.NumberOfHoles; i++)
-    {
-        <div>
-            <label>Hole @(i + 1)</label>
-            <div>
-                <label>Par:</label>
-                <input type="number" name="pars" required />
-            </div>
-            <div>
-                <label>Throws:</label>
-                <input type="hidden" name="throws" id="throws-@i" value="0" />
-                <span id="throws-display-@i">0</span>
-                <button type="button" onclick="incrementThrows(@i)">+ Throw</button>
-            </div>
-        </div>
-    }
+    <table class="score-table">
+        <thead>
+            <tr>
+                <th>Hole</th>
+                <th>Par</th>
+                <th>Throws</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < ViewBag.NumberOfHoles; i++)
+            {
+                <tr>
+                    <td>Hole @(i + 1)</td>
+                    <td>
+                        <input type="number" name="pars" required />
+                    </td>
+                    <td>
+                        <input type="hidden" name="throws" id="throws-@i" value="0" />
+                        <span id="throws-display-@i">0</span>
+                    </td>
+                    <td>
+                        <button type="button" class="throw-button" onclick="incrementThrows(@i)">+ Throw</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 
     <button type="submit">Save Game</button>
 </form>
+
+<style>
+    .score-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .score-table th, .score-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center;
+    }
+
+    .score-table th {
+        background-color: #f2f2f2;
+    }
+
+    .score-table td input[type="number"] {
+        width: 50px;
+        padding: 5px;
+    }
+
+    .throw-button {
+        padding: 5px 10px;
+        margin-left: 10px;
+    }
+
+    .score-table td span {
+        display: inline-block;
+        min-width: 30px;
+    }
+
+    form {
+        max-width: 800px;
+        margin: auto;
+    }
+</style>
 
 <script>
     function incrementThrows(holeIndex) {
@@ -38,5 +88,4 @@
         input.value = parseInt(input.value) + 1;
         display.innerText = input.value;
     }
-
 </script>

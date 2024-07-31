@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using C_DiscApp.Models;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using C_DiscApp.Data;
 
 namespace C_DiscApp.Controllers
 {
@@ -13,11 +15,15 @@ namespace C_DiscApp.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly IDiscService _discService;
+        private readonly DiscContext _context;
 
-        public AdminController(UserManager<User> userManager, IDiscService discService)
+
+        public AdminController(UserManager<User> userManager, IDiscService discService, DiscContext context)
         {
             _userManager = userManager;
             _discService = discService;
+            _context = context;
+
         }
 
         public IActionResult Index()
@@ -172,6 +178,28 @@ namespace C_DiscApp.Controllers
         {
             await _discService.DeleteDiscAsync(id, userId);
             return RedirectToAction("UserInventory", new { id = userId });
+        }
+
+        public async Task<IActionResult> UserHistory(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var gameHistories = await _context.GameHistories
+                .Where(gh => gh.UserId == id)
+                .ToListAsync();
+
+            var viewModel = new GameHistoryViewModel
+            {
+                IsAdmin = true,
+                GameHistories = gameHistories
+            };
+
+            ViewBag.UserEmail = user.Email;
+            return View(viewModel);
         }
     }
 }

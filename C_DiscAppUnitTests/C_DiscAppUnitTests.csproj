@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\C#DiscApp1\C#DiscApp.csproj" />
+    
     <ProjectReference Include="..\C#DiscApp\C#DiscApp.csproj" />
   </ItemGroup>
 

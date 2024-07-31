@@ -40,9 +40,8 @@ namespace C_DiscAppUnitTests
         public void Index_ReturnsView()
         {
             // Arrange
-            var mockDiscService = GetDiscService();
             var mockHttpClientFactory = new Mock<IHttpClientFactory>();
-            var controller = new CourseController(mockDiscService, mockHttpClientFactory.Object, _configuration);
+            var controller = new CourseController(mockHttpClientFactory.Object, _configuration);
 
             // Act
             var result = controller.Index() as ViewResult;
@@ -55,7 +54,6 @@ namespace C_DiscAppUnitTests
         public async Task SearchNearestCourse_ReturnsJsonResultWithCourses()
         {
             // Arrange
-            var mockDiscService = GetDiscService();
             var mockHttpClientFactory = new Mock<IHttpClientFactory>();
             var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
 
@@ -80,7 +78,7 @@ namespace C_DiscAppUnitTests
 
             mockHttpClientFactory.Setup(_ => _.CreateClient(It.IsAny<string>())).Returns(client);
 
-            var controller = new CourseController(mockDiscService, mockHttpClientFactory.Object, _configuration);
+            var controller = new CourseController(mockHttpClientFactory.Object, _configuration);
 
             // Act
             var result = await controller.SearchNearestCourse(40.712776, -74.005974) as JsonResult;
@@ -103,7 +101,6 @@ namespace C_DiscAppUnitTests
         public async Task SearchNearestCourse_ReturnsJsonResultWithError()
         {
             // Arrange
-            var mockDiscService = GetDiscService();
             var mockHttpClientFactory = new Mock<IHttpClientFactory>();
             var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
 
@@ -128,7 +125,7 @@ namespace C_DiscAppUnitTests
 
             mockHttpClientFactory.Setup(_ => _.CreateClient(It.IsAny<string>())).Returns(client);
 
-            var controller = new CourseController(mockDiscService, mockHttpClientFactory.Object, _configuration);
+            var controller = new CourseController(mockHttpClientFactory.Object, _configuration);
 
             // Act
             var result = await controller.SearchNearestCourse(40.712776, -74.005974) as JsonResult;
@@ -141,25 +138,9 @@ namespace C_DiscAppUnitTests
         }
 
         [Fact]
-        public void PlayCourse_ReturnsView()
-        {
-            // Arrange
-            var mockDiscService = GetDiscService();
-            var mockHttpClientFactory = new Mock<IHttpClientFactory>();
-            var controller = new CourseController(mockDiscService, mockHttpClientFactory.Object, _configuration);
-
-            // Act
-            var result = controller.PlayCourse("courseId") as ViewResult;
-
-            // Assert
-            Assert.NotNull(result);
-        }
-
-        [Fact]
         public async Task SearchNearestCourse_ReturnsJsonResultWithMultipleCourses()
         {
             // Arrange
-            var mockDiscService = GetDiscService();
             var mockHttpClientFactory = new Mock<IHttpClientFactory>();
             var handlerMock = new Mock<HttpMessageHandler>(MockBehavior.Strict);
 
@@ -184,7 +165,7 @@ namespace C_DiscAppUnitTests
 
             mockHttpClientFactory.Setup(_ => _.CreateClient(It.IsAny<string>())).Returns(client);
 
-            var controller = new CourseController(mockDiscService, mockHttpClientFactory.Object, _configuration);
+            var controller = new CourseController(mockHttpClientFactory.Object, _configuration);
 
             // Act
             var result = await controller.SearchNearestCourse(40.712776, -74.005974) as JsonResult;
