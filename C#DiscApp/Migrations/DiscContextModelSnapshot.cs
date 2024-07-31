@@ -102,6 +102,9 @@ namespace C_DiscApp.Migrations
                     b.Property<int>("NumberOfHoles")
                         .HasColumnType("int");
 
+                    b.Property<int>("Rating")
+                        .HasColumnType("int");
+
                     b.Property<int>("TotalParThrows")
                         .HasColumnType("int");
 

@@ -5,6 +5,7 @@ using C_DiscApp.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace C_DiscApp
 {
     public class Program
@@ -60,6 +61,7 @@ namespace C_DiscApp
             builder.Services.AddRazorPages();
             builder.Services.AddScoped<IDiscService, DiscService>();
             builder.Services.AddHttpClient();
+
 
             var app = builder.Build();
 

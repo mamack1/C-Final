@@ -27,7 +27,7 @@ namespace C_DiscApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Start(string name, string address, double distance, int numberOfHoles)
+        public IActionResult Start(string name, string address, double distance, int numberOfHoles, int rating)
         {
             ViewBag.CourseName = name;
             ViewBag.CourseAddress = address;
@@ -38,9 +38,9 @@ namespace C_DiscApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveGame(int numberOfHoles, string courseName, List<int> pars, List<int> throws)
+        public async Task<IActionResult> SaveGame(int numberOfHoles, string courseName, List<int> pars, List<int> throws, int rating)
         {
-            if (string.IsNullOrEmpty(courseName))
+            if (string.IsNullOrWhiteSpace(courseName))
             {
                 ModelState.AddModelError("", "Course name is required.");
                 return View("Play");
@@ -52,16 +52,16 @@ namespace C_DiscApp.Controllers
                 return View("Play");
             }
 
-            var userId = _userManager.GetUserId(User); // Get the current user ID
-
+            var userId = _userManager.GetUserId(User);
             var gameHistory = new GameHistory
             {
                 CourseName = courseName,
                 NumberOfHoles = numberOfHoles,
-                DatePlayed = DateTime.Now,
                 TotalParThrows = pars.Sum(),
                 TotalThrows = throws.Sum(),
-                UserId = userId // Assign the current user ID
+                UserId = userId,
+                Rating = rating,
+                DatePlayed = DateTime.UtcNow
             };
 
             _context.GameHistories.Add(gameHistory);

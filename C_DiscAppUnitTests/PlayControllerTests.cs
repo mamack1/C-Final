@@ -45,7 +45,7 @@ namespace C_DiscAppUnitTests
             var controller = new PlayController(context, mockDiscService.Object, mockLogger.Object, mockUserManager.Object);
 
             // Act
-            var result = controller.Start("Course 1", "Address 1", 5.0, 18) as ViewResult;
+            var result = controller.Start("Course 1", "Address 1", 5.0, 18,4) as ViewResult;
 
             // Assert
             Assert.NotNull(result);
@@ -68,12 +68,13 @@ namespace C_DiscAppUnitTests
             var controller = new PlayController(context, mockDiscService.Object, mockLogger.Object, mockUserManager.Object);
             var pars = new List<int> { 3, 3, 3 };
             var throws = new List<int> { 4, 3, 3 };
+            var rating = 4; // Add the rating
 
             var user = new User { Id = "user1" };
             mockUserManager.Setup(um => um.GetUserId(It.IsAny<System.Security.Claims.ClaimsPrincipal>())).Returns(user.Id);
 
             // Act
-            var result = await controller.SaveGame(3, "Course 1", pars, throws) as RedirectToActionResult;
+            var result = await controller.SaveGame(3, "Course 1", pars, throws, rating) as RedirectToActionResult; // Pass the rating
 
             // Assert
             Assert.NotNull(result);
@@ -87,6 +88,7 @@ namespace C_DiscAppUnitTests
             Assert.Equal(9, savedGame.TotalParThrows);
             Assert.Equal(10, savedGame.TotalThrows);
             Assert.Equal("user1", savedGame.UserId);
+            Assert.Equal(rating, savedGame.Rating); // Check the rating
         }
 
         [Fact]
@@ -100,9 +102,10 @@ namespace C_DiscAppUnitTests
             var controller = new PlayController(context, mockDiscService.Object, mockLogger.Object, mockUserManager.Object);
             var pars = new List<int> { 3, 3, 3 };
             var throws = new List<int> { 4, 3, 3 };
+            var rating = 4; // Add the rating
 
             // Act
-            var result = await controller.SaveGame(3, "", pars, throws) as ViewResult;
+            var result = await controller.SaveGame(3, "", pars, throws, rating) as ViewResult; // Pass the rating
 
             // Assert
             Assert.NotNull(result);
@@ -122,9 +125,10 @@ namespace C_DiscAppUnitTests
             var controller = new PlayController(context, mockDiscService.Object, mockLogger.Object, mockUserManager.Object);
             var pars = new List<int> { 3, 3, 3 };
             var throws = new List<int> { 4, 3 };
+            var rating = 4; // Add the rating
 
             // Act
-            var result = await controller.SaveGame(3, "Course 1", pars, throws) as ViewResult;
+            var result = await controller.SaveGame(3, "Course 1", pars, throws, rating) as ViewResult; // Pass the rating
 
             // Assert
             Assert.NotNull(result);

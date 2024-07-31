@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace C_DiscApp.Migrations
 {
     [DbContext(typeof(DiscContext))]
-    [Migration("20240731032023_Initial")]
-    partial class Initial
+    [Migration("20240731151325_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -103,6 +103,9 @@ namespace C_DiscApp.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("NumberOfHoles")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Rating")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalParThrows")

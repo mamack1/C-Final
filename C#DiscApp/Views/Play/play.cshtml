@@ -3,6 +3,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .star-rating .star {
+        font-size: 1.5em;
+        color: #ddd;
+    }
+
+    .star-rating .star.filled {
+        color: #f39c12;
+    }
+</style>
+
 <h2>Playing at @ViewBag.CourseName</h2>
 <p>@ViewBag.CourseAddress</p>
 <p>Distance: @ViewBag.CourseDistance km</p>
@@ -39,6 +50,16 @@
             }
         </tbody>
     </table>
+
+    <div>
+        <label>Rate this course:</label>
+        <select name="rating">
+            @for (int i = 1; i <= 5; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
 
     <button type="submit">Save Game</button>
 </form>

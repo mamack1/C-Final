@@ -9,8 +9,7 @@
         public int TotalParThrows { get; set; }
         public int TotalThrows { get; set; }
         public string UserId { get; set; }
+        public int Rating { get; set; }
 
-        //[ForeignKey("UserID")]
-        //public virtual User User { get; set; }
     }
 }
