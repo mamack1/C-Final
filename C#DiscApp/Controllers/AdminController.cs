@@ -108,7 +108,7 @@ namespace C_DiscApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Failed to delete the user.");
+            //ModelState.AddModelError("", "Failed to delete the user.");
             return View("DeleteUser", user); // Return to DeleteUser view in case of failure
         }
 
