@@ -2,13 +2,15 @@
 {
     public class GameHistory
     {
-        public int GameHistoryID { get; set; }
-        public int UserID { get; set; }
-        public int CourseID { get; set; }
+        public int Id { get; set; }
+        public string CourseName { get; set; }
         public DateTime DatePlayed { get; set; }
-        public int TotalScore { get; set; }
-        public virtual User User { get; set; }
-        public virtual Course Course { get; set; }
-        public virtual ICollection<HoleScore> HoleScores { get; set; }
+        public int NumberOfHoles { get; set; }
+        public int TotalParThrows { get; set; }
+        public int TotalThrows { get; set; }
+        public string UserId { get; set; }
+
+        //[ForeignKey("UserID")]
+        //public virtual User User { get; set; }
     }
 }

@@ -1,9 +1,7 @@
 ﻿@{
-    ViewData["Title"] = "Course Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +22,18 @@
         .error {
             color: red;
         }
+
+        .course {
+            margin-bottom: 20px;
+        }
+
+            .course button {
+                margin-top: 10px;
+            }
+
+            .course .hole-input {
+                margin-top: 10px;
+            }
     </style>
     <script>
         function getLocation() {
@@ -52,12 +62,18 @@
                     } else {
                         data.forEach(course => {
                             var courseElement = document.createElement("div");
+                            courseElement.classList.add("course");
                             var distance = course.distance.toFixed(2) + " km";
                             courseElement.innerHTML = `
-                                                <strong>Course:</strong> ${course.name}<br>
-                                                <strong>Address:</strong> ${course.address}<br>
-                                                <strong>Distance:</strong> ${distance}
-                                            `;
+                                                        <strong>Course:</strong> ${course.name}<br>
+                                                        <strong>Address:</strong> ${course.address}<br>
+                                                        <strong>Distance:</strong> ${distance}<br>
+                                                        <div class="hole-input">
+                                                            <label for="holes-${course.name}">Number of Holes:</label>
+                                                            <input type="number" id="holes-${course.name}" name="numberOfHoles" min="1" value="9" />
+                                                        </div>
+                                                        <button onclick="playHere('${course.name}', '${course.address}', ${course.distance}, document.getElementById('holes-${course.name}').value)">Play here</button>
+                                                    `;
                             courseInfoDiv.appendChild(courseElement);
                             courseInfoDiv.appendChild(document.createElement("hr")); // Add a separator
                         });
@@ -66,6 +82,11 @@
                 .catch(error => {
                     document.getElementById("courseInfo").innerText = `Fetch error: ${error.message}`;
                 });
+        }
+
+        function playHere(name, address, distance, numberOfHoles) {
+            var url = `/Play/Start?name=${encodeURIComponent(name)}&address=${encodeURIComponent(address)}&distance=${distance}&numberOfHoles=${numberOfHoles}`;
+            window.location.href = url;
         }
 
         function showError(error) {

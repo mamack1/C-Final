@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Play";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Playing at @ViewBag.CourseName</h2>
+<p>@ViewBag.CourseAddress</p>
+<p>Distance: @ViewBag.CourseDistance km</p>
+
+<form method="post" asp-action="SaveGame" asp-controller="Play">
+    <input type="hidden" name="courseName" value="@ViewBag.CourseName" />
+    <input type="hidden" name="numberOfHoles" value="@ViewBag.NumberOfHoles" />
+
+    @for (int i = 0; i < ViewBag.NumberOfHoles; i++)
+    {
+        <div>
+            <label>Hole @(i + 1)</label>
+            <div>
+                <label>Par:</label>
+                <input type="number" name="pars" required />
+            </div>
+            <div>
+                <label>Throws:</label>
+                <input type="hidden" name="throws" id="throws-@i" value="0" />
+                <span id="throws-display-@i">0</span>
+                <button type="button" onclick="incrementThrows(@i)">+ Throw</button>
+            </div>
+        </div>
+    }
+
+    <button type="submit">Save Game</button>
+</form>
+
+<script>
+    function incrementThrows(holeIndex) {
+        var input = document.getElementById('throws-' + holeIndex);
+        var display = document.getElementById('throws-display-' + holeIndex);
+        input.value = parseInt(input.value) + 1;
+        display.innerText = input.value;
+    }
+
+</script>

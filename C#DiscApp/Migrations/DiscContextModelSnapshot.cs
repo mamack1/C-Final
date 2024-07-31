@@ -53,7 +53,8 @@ namespace C_DiscApp.Migrations
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(2083)
+                        .HasColumnType("nvarchar(2083)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -73,27 +74,47 @@ namespace C_DiscApp.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Weight")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
 
                     b.HasKey("DiscID");
 
-                    b.HasIndex("UserId");
+                    b.ToTable("Discs");
+                });
 
-                    b.ToTable("Discs", t =>
-                        {
-                            t.HasCheckConstraint("CK_Disc_Fade", "[Fade] >= 0 AND [Fade] <= 5");
+            modelBuilder.Entity("C_DiscApp.Models.GameHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                            t.HasCheckConstraint("CK_Disc_Glide", "[Glide] >= 1 AND [Glide] <= 7");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                            t.HasCheckConstraint("CK_Disc_Speed", "[Speed] >= 1 AND [Speed] <= 15");
+                    b.Property<string>("CourseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                            t.HasCheckConstraint("CK_Disc_Turn", "[Turn] >= -5 AND [Turn] <= 5");
-                        });
+                    b.Property<DateTime>("DatePlayed")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumberOfHoles")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalParThrows")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalThrows")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GameHistories");
                 });
 
             modelBuilder.Entity("C_DiscApp.Models.User", b =>
@@ -108,12 +129,23 @@ namespace C_DiscApp.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("DateJoined")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -241,10 +273,12 @@ namespace C_DiscApp.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -281,10 +315,12 @@ namespace C_DiscApp.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -292,17 +328,6 @@ namespace C_DiscApp.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
-                });
-
-            modelBuilder.Entity("C_DiscApp.Models.Disc", b =>
-                {
-                    b.HasOne("C_DiscApp.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

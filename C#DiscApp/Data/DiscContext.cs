@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using C_DiscApp.Models;
+﻿using C_DiscApp.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace C_DiscApp.Data
 {
@@ -11,11 +11,13 @@ namespace C_DiscApp.Data
         }
 
         public DbSet<Disc> Discs { get; set; }
+        public DbSet<GameHistory> GameHistories { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
+            // Disc Entity Configuration
             modelBuilder.Entity<Disc>()
                 .HasKey(d => d.DiscID);
 
@@ -69,6 +71,10 @@ namespace C_DiscApp.Data
             modelBuilder.Entity<Disc>()
                 .Property(d => d.UserId)
                 .IsRequired();
+
+            // GameHistory Entity Configuration
+            modelBuilder.Entity<GameHistory>().HasKey(g => g.Id);
+
         }
     }
 }

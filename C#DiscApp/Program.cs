@@ -17,6 +17,7 @@ namespace C_DiscApp
             builder.Services.AddDbContext<DiscContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
             builder.Services.AddDefaultIdentity<User>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;

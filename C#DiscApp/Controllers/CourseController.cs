@@ -5,19 +5,16 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
-using C_DiscApp.Services;
 
 namespace C_DiscApp.Controllers
 {
     public class CourseController : Controller
     {
-        private readonly IDiscService _discService;
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly IConfiguration _configuration;
 
-        public CourseController(IDiscService discService, IHttpClientFactory httpClientFactory, IConfiguration configuration)
+        public CourseController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
-            _discService = discService;
             _httpClientFactory = httpClientFactory;
             _configuration = configuration;
         }
@@ -44,16 +41,37 @@ namespace C_DiscApp.Controllers
                 var json = JObject.Parse(response);
                 var results = json["results"];
 
-                // Limit the number of results to 3 closest courses
-                var closestCourses = results.Take(3).Select(course => new
+                // Filter out duplicate addresses and calculate distances
+                var uniqueCourses = new List<(string name, string address, double? distance)>();
+                var uniqueAddresses = new HashSet<string>();
+
+                foreach (var course in results)
                 {
-                    name = course["name"].ToString(),
-                    address = course["vicinity"].ToString(),
-                    distance = CalculateDistance(latitude, longitude,
-                                                 double.Parse(course["geometry"]["location"]["lat"].ToString()),
-                                                 double.Parse(course["geometry"]["location"]["lng"].ToString())),
-                    playUrl = $"~/Course/PlayCourse?courseId={course["place_id"]}" // Example URL, adjust as needed
-                });
+                    var courseAddress = course["vicinity"].ToString();
+                    if (!uniqueAddresses.Contains(courseAddress))
+                    {
+                        uniqueAddresses.Add(courseAddress);
+
+                        var courseName = course["name"].ToString();
+                        var courseLat = double.Parse(course["geometry"]["location"]["lat"].ToString());
+                        var courseLng = double.Parse(course["geometry"]["location"]["lng"].ToString());
+                        var distance = CalculateDistance(latitude, longitude, courseLat, courseLng);
+
+                        uniqueCourses.Add((courseName, courseAddress, distance));
+                    }
+                }
+
+                // Sort the courses by distance and take the top 5
+                var closestCourses = uniqueCourses
+                    .Where(course => course.distance.HasValue)
+                    .OrderBy(course => course.distance.Value)
+                    .Take(5)
+                    .Select(course => new
+                    {
+                        course.name,
+                        course.address,
+                        distance = course.distance.Value
+                    });
 
                 if (!closestCourses.Any())
                 {
@@ -64,8 +82,8 @@ namespace C_DiscApp.Controllers
             }
             catch (Exception ex)
             {
-                // Handle exceptions
-                return Json(new { error = "An error occurred" });
+                // Log the exception (ex)
+                return Json(new { error = ex.Message });
             }
         }
 
@@ -82,19 +100,8 @@ namespace C_DiscApp.Controllers
                     Math.Sin(deltaLambda / 2) * Math.Sin(deltaLambda / 2);
             var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
 
-            var distance = R * c; // Distance in meters
-            // return distance / 1000; // Convert to kilometers
-            var distanceInKm = distance / 1000; // Convert to kilometers
-            var distanceInMiles = distanceInKm * 0.621371; // Convert to miles
-            return distanceInMiles;
-        }
-
-        [HttpGet]
-        public IActionResult PlayCourse(string courseId)
-        {
-            // Retrieve course details based on courseId, if needed
-            // Render the gameplay view or redirect to a form to select number of holes
-            return View();
+            var distance = R * c;
+            return distance / 1000; // Convert to kilometers
         }
     }
 }
